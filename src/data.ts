@@ -8,7 +8,7 @@ export const services: Service[] = [
     id: "landing-page",
     name: "Landing Pages",
     description: "Páginas de aterrizaje de alta conversión para captar leads y ventas.",
-    price: "150 - 300",
+    price: "60 - 300",
     time: "3-5 días",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3",
     features: [
@@ -159,7 +159,7 @@ export const services: Service[] = [
     id: "remittances",
     name: "Landing Page para Remesas",
     description: "Página web informativa y persuasiva para agencias de envíos y casas de cambio.",
-    price: "150 - 300",
+    price: "60 - 300",
     time: "1-2 semanas",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=2000",
     features: [
@@ -249,7 +249,7 @@ export const portfolio: PortfolioItem[] = [
 export const pricingPlans: PricingPlan[] = [
   {
     name: "Landing Page Escencial",
-    price: "150 - 300",
+    price: "60 - 300",
     time: "3-5 días",
     features: [
       "Diseño Premium de 1 página",

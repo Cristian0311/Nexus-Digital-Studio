@@ -11,7 +11,7 @@ const featuredItems = [
     description: "Atrae nuevos clientes y promociona tus servicios 24/7 con una landing page optimizada y profesional. Perfecta para consultores, clínicas, y negocios locales.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3",
     tags: ["Captación de Leads", "Diseño Responsive", "Botón WhatsApp"],
-    price: "150 - 300",
+    price: "60 - 300",
     time: "3-5 días",
     features: ["Diseño de alta conversión", "Formulario de contacto", "Integración con redes", "Optimizado para móviles"],
     idealFor: ["Emprendedores", "Consultores", "Negocios locales"],
