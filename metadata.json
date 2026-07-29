@@ -1,0 +1,6 @@
+{
+  "name": "Nexus Digital Studio",
+  "description": "Transformamos ideas en soluciones digitales de alto impacto.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
