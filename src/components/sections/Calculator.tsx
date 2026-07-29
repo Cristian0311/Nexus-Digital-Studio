@@ -8,7 +8,7 @@ const options = {
     { 
       id: 'landing', 
       label: 'Landing Page', 
-      basePrice: 150, 
+      basePrice: 60, 
       baseTime: 3,
       desc: 'Página de aterrizaje de una sola vista enfocada en convertir visitantes en clientes.',
       extras: [
@@ -21,7 +21,7 @@ const options = {
     { 
       id: 'ecommerce', 
       label: 'Tienda Online / Catálogo', 
-      basePrice: 400, 
+      basePrice: 150, 
       baseTime: 14,
       desc: 'Plataforma para vender productos por internet las 24 horas del día.',
       extras: [
@@ -34,7 +34,7 @@ const options = {
     { 
       id: 'system', 
       label: 'Sistema Web / CRM', 
-      basePrice: 800, 
+      basePrice: 150, 
       baseTime: 30,
       desc: 'Software a medida para automatizar y gestionar los procesos de tu empresa.',
       extras: [
@@ -47,7 +47,7 @@ const options = {
     { 
       id: 'custom', 
       label: 'Otro / A la Medida', 
-      basePrice: 500, 
+      basePrice: 150, 
       baseTime: 20,
       desc: 'Proyectos especiales, integraciones, IA, mantenimiento, etc.',
       extras: [
