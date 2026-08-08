@@ -156,31 +156,6 @@ export const services: Service[] = [
     ]
   },
   {
-    id: "remittances",
-    name: "Landing Page para Remesas",
-    description: "Página web informativa y persuasiva para agencias de envíos y casas de cambio.",
-    price: "60 - 300",
-    time: "1-2 semanas",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=2000",
-    features: [
-      "Diseño enfocado en generar confianza",
-      "Calculadora de tasas de cambio",
-      "Formulario de contacto y cotización",
-      "Integración directa a WhatsApp",
-      "Listado de países de destino"
-    ],
-    idealFor: [
-      "Agencias de envío de dinero locales",
-      "Casas de cambio",
-      "Emprendedores que envían remesas"
-    ],
-    benefits: [
-      "Mayor captación de clientes en internet",
-      "Proceso claro y seguro para el usuario",
-      "Aumento en las cotizaciones por WhatsApp"
-    ]
-  },
-  {
     id: "custom-project",
     name: "Proyecto a la Medida",
     description: "Desarrollo de software y soluciones tecnológicas únicas según las necesidades de tu empresa.",
@@ -243,12 +218,24 @@ export const portfolio: PortfolioItem[] = [
     price: "600 - 1200",
     time: "4 semanas",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=2000&ixlib=rb-4.0.3"
+  },
+  {
+    id: "p4",
+    title: "Calculadora Solar Inteligente",
+    category: "Aplicación Web / IA",
+    description: "App especializada que analiza el consumo eléctrico del hogar y calcula exactamente cuántos paneles solares, inversores y baterías necesitas.",
+    features: ["Cálculo preciso de Wh", "Recomendación de equipos", "Generación de PDF", "Base de datos de paneles"],
+    idealFor: ["Instaladores solares", "Empresas de energía", "Consultores energéticos"],
+    benefits: ["Agiliza las ventas", "Presupuestos en segundos", "Imagen altamente profesional"],
+    price: "300 - 600",
+    time: "2-3 semanas",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=2000&ixlib=rb-4.0.3"
   }
 ];
 
 export const pricingPlans: PricingPlan[] = [
   {
-    name: "Landing Page Escencial",
+    name: "Landing Page Esencial",
     price: "60 - 300",
     time: "3-5 días",
     features: [

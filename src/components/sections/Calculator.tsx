@@ -47,7 +47,7 @@ const options = {
     { 
       id: 'custom', 
       label: 'Otro / A la Medida', 
-      basePrice: 150, 
+      basePrice: 100, 
       baseTime: 20,
       desc: 'Proyectos especiales, integraciones, IA, mantenimiento, etc.',
       extras: [

@@ -1,7 +1,8 @@
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { createPortal } from 'react-dom';
 import { services, WHATSAPP_URL } from '../../data';
 import { ArrowRight, Clock, X, Check, Target, Star } from 'lucide-react';
-import { useState } from 'react';
 
 const ServiceCard = ({ service, index, onOpenDetails }: { service: typeof services[0], index: number, onOpenDetails: () => void }) => {
   return (
@@ -62,6 +63,22 @@ const ServiceCard = ({ service, index, onOpenDetails }: { service: typeof servic
 
 export default function Services() {
   const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (selectedService) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedService]);
 
   return (
     <section id="servicios" className="relative py-24 z-10">
@@ -98,128 +115,131 @@ export default function Services() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {selectedService && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedService(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
-          >
+      {mounted && createPortal(
+        <AnimatePresence>
+          {selectedService && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl overflow-hidden rounded-3xl bg-[#050b14] border border-white/10 shadow-2xl flex flex-col md:flex-row max-h-[90vh] overflow-y-auto"
+              key="service-modal"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedService(null)}
+              className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
             >
-              <button
-                onClick={() => setSelectedService(null)}
-                className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white transition-colors hover:bg-brand"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-full max-w-4xl overflow-hidden rounded-3xl bg-[#050b14] border border-white/10 shadow-2xl flex flex-col md:flex-row max-h-[90vh] overflow-y-auto"
               >
-                <X size={20} />
-              </button>
+                <button
+                  onClick={() => setSelectedService(null)}
+                  className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white transition-colors hover:bg-brand"
+                >
+                  <X size={20} />
+                </button>
 
-              <div className="relative h-48 w-full shrink-0 md:h-auto md:w-2/5">
-                <img 
-                  src={selectedService.image} 
-                  alt={selectedService.name} 
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050b14] via-[#050b14]/50 to-transparent md:bg-gradient-to-r md:from-transparent md:via-[#050b14]/20 md:to-[#050b14]" />
-              </div>
-
-              <div className="p-6 sm:p-8 md:w-3/5 flex flex-col">
-                <h3 className="mb-2 text-3xl font-bold text-white neon-text">{selectedService.name}</h3>
-                
-                <p className="mb-6 text-gray-300 leading-relaxed">{selectedService.description}</p>
-                
-                <div className="mb-8 flex-1 grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">Ideal Para</h4>
-                    <ul className="space-y-3">
-                      {selectedService.idealFor.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-gray-300">
-                          <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-blue-400">
-                            <Target size={12} />
-                          </div>
-                          <span className="text-sm">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">Beneficios</h4>
-                    <ul className="space-y-3">
-                      {selectedService.benefits.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-gray-300">
-                          <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
-                            <Star size={12} />
-                          </div>
-                          <span className="text-sm">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="relative h-48 w-full shrink-0 md:h-auto md:w-2/5">
+                  <img 
+                    src={selectedService.image} 
+                    alt={selectedService.name} 
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050b14] via-[#050b14]/50 to-transparent md:bg-gradient-to-r md:from-transparent md:via-[#050b14]/20 md:to-[#050b14]" />
                 </div>
 
-                <div className="mb-6">
-                  <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">Características Clave</h4>
-                  <ul className="grid gap-3 sm:grid-cols-2">
-                    {selectedService.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-gray-300">
-                        <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/5 text-white border border-white/10">
-                          <Check size={12} />
-                        </div>
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <div className="p-6 sm:p-8 md:w-3/5 flex flex-col">
+                  <h3 className="mb-2 text-3xl font-bold text-white neon-text">{selectedService.name}</h3>
+                  
+                  <p className="mb-6 text-gray-300 leading-relaxed">{selectedService.description}</p>
+                  
+                  <div className="mb-8 flex-1 grid gap-6 sm:grid-cols-2">
+                    <div>
+                      <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">Ideal Para</h4>
+                      <ul className="space-y-3">
+                        {selectedService.idealFor.map((item, idx) => (
+                          <li key={idx} className="flex items-start gap-3 text-gray-300">
+                            <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-blue-400">
+                              <Target size={12} />
+                            </div>
+                            <span className="text-sm">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between rounded-2xl bg-white/5 border border-white/10 p-5 mb-6">
-                  <div>
-                    <span className="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Inversión aprox.</span>
-                    <span className="text-xl font-bold text-brand">~ {selectedService.price} USD</span>
-                  </div>
-                  <div className="h-px w-full bg-white/10 sm:h-8 sm:w-px" />
-                  <div className="sm:text-right">
-                    <span className="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Tiempo est.</span>
-                    <div className="flex items-center gap-2 font-medium text-gray-300">
-                      <Clock size={16} className="text-brand" />
-                      <span>{selectedService.time}</span>
+                    <div>
+                      <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">Beneficios</h4>
+                      <ul className="space-y-3">
+                        {selectedService.benefits.map((item, idx) => (
+                          <li key={idx} className="flex items-start gap-3 text-gray-300">
+                            <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
+                              <Star size={12} />
+                            </div>
+                            <span className="text-sm">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                </div>
 
-                <div className="flex gap-2 w-full sm:w-auto">
-                  <a
-                    href={`${WHATSAPP_URL}?text=Hola%2C%20me%20interesa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20${encodeURIComponent(selectedService.name)}.`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-1 sm:flex-none items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-4 font-bold text-white transition-all hover:bg-[#20bd5a]"
-                  >
-                    WhatsApp
-                  </a>
-                  <button
-                    onClick={() => {
-                      setSelectedService(null);
-                      const calc = document.getElementById('calculadora');
-                      if (calc) calc.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="flex flex-1 sm:flex-none items-center justify-center gap-2 rounded-xl bg-brand px-4 py-4 font-bold text-white transition-all hover:bg-brand-light neon-glow"
-                  >
-                    Cotizar Proyecto <ArrowRight size={20} />
-                  </button>
-                </div>
+                  <div className="mb-6">
+                    <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">Características Clave</h4>
+                    <ul className="grid gap-3 sm:grid-cols-2">
+                      {selectedService.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-gray-300">
+                          <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/5 text-white border border-white/10">
+                            <Check size={12} />
+                          </div>
+                          <span className="text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-              </div>
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between rounded-2xl bg-white/5 border border-white/10 p-5 mb-6">
+                    <div>
+                      <span className="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Inversión aprox.</span>
+                      <span className="text-xl font-bold text-brand">~ {selectedService.price} USD</span>
+                    </div>
+                    <div className="h-px w-full bg-white/10 sm:h-8 sm:w-px" />
+                    <div className="sm:text-right">
+                      <span className="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Tiempo est.</span>
+                      <div className="flex items-center gap-2 font-medium text-gray-300">
+                        <Clock size={16} className="text-brand" />
+                        <span>{selectedService.time}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-2 w-full sm:w-auto">
+                    <a
+                      href={`${WHATSAPP_URL}?text=Hola%2C%20me%20interesa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20${encodeURIComponent(selectedService.name)}.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-1 sm:flex-none items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-4 font-bold text-white transition-all hover:bg-[#20bd5a]"
+                    >
+                      WhatsApp
+                    </a>
+                    <button
+                      onClick={() => {
+                        setSelectedService(null);
+                        const calc = document.getElementById('calculadora');
+                        if (calc) calc.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="flex flex-1 sm:flex-none items-center justify-center gap-2 rounded-xl bg-brand px-4 py-4 font-bold text-white transition-all hover:bg-brand-light neon-glow"
+                    >
+                      Cotizar Proyecto <ArrowRight size={20} />
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </section>
   );
 }
