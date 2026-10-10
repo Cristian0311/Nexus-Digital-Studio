@@ -59,7 +59,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.12 }}
             className="mx-auto mb-8 max-w-xl text-pretty text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 lg:mx-0"
           >
-            Diseñamos páginas web, tiendas online y software a medida para que tu marca se vea profesional, conecte con sus clientes y convierta ideas en oportunidades reales.
+            Diseñamos landing pages que convierten, tiendas online y software de punto de venta. Y para gestionar tu operación, conoce PALMYRA CRM: nuestra plataforma de gestión empresarial.
           </motion.p>
 
           <motion.div
