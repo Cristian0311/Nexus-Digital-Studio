@@ -35,7 +35,7 @@ export const services: Service[] = [
     id: "ecommerce",
     name: "Tiendas Online",
     description: "E-commerce completo con gestión de pedidos y catálogo avanzado.",
-    price: "150 - 800",
+    price: "150 - 1000",
     time: "2-3 semanas",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=2000&ixlib=rb-4.0.3",
     features: [
