@@ -12,7 +12,7 @@ export default function Footer() {
           
           <div className="flex flex-col gap-4">
             <h3 className="text-2xl font-bold tracking-tighter text-white">
-              <span className="text-brand">NEXUS</span> DIGITAL STUDIO
+              <span className="text-brand">PALMYRA</span> DIGITAL STUDIO
             </h3>
             <p className="text-gray-400">
               Transformamos ideas en soluciones digitales de alto impacto. Creamos experiencias premium para marcas que buscan destacar.
@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 border-t border-white/10 pt-8 text-center text-sm text-gray-500">
-          <p>&copy; {currentYear} Nexus Digital Studio. Todos los derechos reservados.</p>
+          <p>&copy; {currentYear} PALMYRA DIGITAL STUDIO. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
