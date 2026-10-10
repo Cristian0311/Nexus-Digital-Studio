@@ -13,12 +13,12 @@ export default function Terms() {
         <div className="space-y-6 text-gray-300 leading-relaxed">
           <section>
             <h2 className="text-xl font-bold text-white mb-3">1. Aceptación de los Términos</h2>
-            <p>Al acceder y utilizar los servicios de Nexus Digital Studio, usted acepta estar sujeto a estos términos y condiciones. Si no está de acuerdo con alguna parte de estos términos, no podrá utilizar nuestros servicios.</p>
+            <p>Al acceder y utilizar los servicios de PALMYRA DIGITAL STUDIO, usted acepta estar sujeto a estos términos y condiciones. Si no está de acuerdo con alguna parte de estos términos, no podrá utilizar nuestros servicios.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-white mb-3">2. Servicios Ofrecidos</h2>
-            <p>Nexus Digital Studio proporciona servicios de diseño web, desarrollo de software, creación de landing pages, tiendas online y consultoría tecnológica. Nos reservamos el derecho de modificar o descontinuar cualquier servicio en cualquier momento.</p>
+            <p>PALMYRA DIGITAL STUDIO proporciona servicios de diseño web, desarrollo de software, creación de landing pages, tiendas online y consultoría tecnológica. Nos reservamos el derecho de modificar o descontinuar cualquier servicio en cualquier momento.</p>
           </section>
 
           <section>
@@ -28,7 +28,7 @@ export default function Terms() {
 
           <section>
             <h2 className="text-xl font-bold text-white mb-3">4. Propiedad Intelectual</h2>
-            <p>Una vez liquidado el 100% del costo del proyecto, la propiedad intelectual del código específico desarrollado para el cliente le será transferida, excluyendo librerías de terceros, frameworks open-source y componentes base de Nexus Digital Studio.</p>
+            <p>Una vez liquidado el 100% del costo del proyecto, la propiedad intelectual del código específico desarrollado para el cliente le será transferida, excluyendo librerías de terceros, frameworks open-source y componentes base de PALMYRA DIGITAL STUDIO.</p>
           </section>
 
           <section>
