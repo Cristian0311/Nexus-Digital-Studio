@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ChartNoAxesCombined, ClipboardList, Package, Users } from 'lucide-react';
+import { ArrowUpRight, BarChart3, ClipboardList, Package, Users } from 'lucide-react';
 import { CRM_URL } from '../../data';
 
 const highlights = [
