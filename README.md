@@ -1,24 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
-
 # PALMYRA DIGITAL STUDIO
 
-Sitio web comercial para servicios de diseño y desarrollo web.
+Sitio web comercial para servicios de diseño y desarrollo web, tiendas online y soluciones digitales a medida.
+
+## Requisitos
+
+- Node.js
+- npm
 
 ## Desarrollo local
 
-Este repositorio contiene el código fuente del sitio web de PALMYRA DIGITAL STUDIO.
+1. Instala las dependencias:
 
-View your app in AI Studio: https://ai.studio/apps/fc44aae0-0c51-497a-b419-99432680bf2c
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+
+2. Inicia el entorno de desarrollo:
+
    `npm run dev`
+
+3. Abre la dirección local que indique Vite en la terminal.
+
+## Comprobaciones
+
+- `npm run lint`: comprueba los tipos de TypeScript.
+- `npm run build`: genera la versión de producción.
+
+## Despliegue
+
+El sitio está conectado a Render y utiliza la rama `main`. Revisa los registros de despliegue después de cada actualización para confirmar que la compilación terminó correctamente.
