@@ -1,85 +1,197 @@
-import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import {
+  ArrowRight,
+  BarChart3,
+  CheckCircle2,
+  Code2,
+  Layers3,
+  MousePointer2,
+  Sparkles,
+  TrendingUp,
+  Zap,
+} from 'lucide-react';
 import { CRM_URL } from '../../data';
-import { ArrowRight, Code2, ExternalLink } from 'lucide-react';
-import gsap from 'gsap';
+
+const capabilities = [
+  { icon: Zap, label: 'Rápido y ligero' },
+  { icon: MousePointer2, label: 'Diseñado para convertir' },
+  { icon: Layers3, label: 'Listo para crecer' },
+];
 
 export default function Hero() {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    if (titleRef.current) {
-      gsap.fromTo(
-        titleRef.current,
-        { opacity: 0, scale: 0.8, filter: "blur(10px)" },
-        { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.5, ease: "power3.out", delay: 0.5 }
-      );
-    }
-  }, []);
-
   return (
-    <section id="hero" className="relative flex min-h-screen w-full items-center justify-center overflow-hidden pt-20">
-      
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-gradient-to-t from-[#050b14] via-transparent to-transparent pb-12 sm:pb-24">
-        
-        <div className="flex flex-col items-center text-center max-w-4xl px-6 mt-auto">
+    <section id="hero" className="hero-shell relative isolate flex min-h-[auto] w-full items-center overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32 lg:min-h-[92svh] lg:pb-24 lg:pt-32">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="hero-orb hero-orb-one absolute -left-40 top-10 h-80 w-80 rounded-full bg-brand/20 blur-[100px] sm:h-[28rem] sm:w-[28rem]" />
+        <div className="hero-orb hero-orb-two absolute -right-24 top-24 h-72 w-72 rounded-full bg-sky-500/15 blur-[100px] sm:h-[32rem] sm:w-[32rem]" />
+        <div className="hero-grid absolute inset-0 opacity-40" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#050b14] to-transparent" />
+      </div>
+
+      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.02fr_.98fr] lg:gap-10 xl:gap-16">
+        <div className="relative z-10 mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand/50 glass px-4 py-2"
+            transition={{ duration: 0.45 }}
+            className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-brand/35 bg-brand/10 px-3 py-2 text-left text-xs font-semibold text-violet-100 shadow-lg shadow-brand/10 sm:px-4 sm:text-sm"
           >
-            <Code2 size={16} className="text-brand" />
-            <span className="text-sm font-medium text-gray-300">Desarrollo Web Premium</span>
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/20 text-brand-light">
+              <Sparkles size={15} />
+            </span>
+            Ideas ambiciosas. Experiencias digitales extraordinarias.
           </motion.div>
-          
-          <h1
-            ref={titleRef}
-            className="mb-6 text-4xl font-black tracking-tighter text-white md:text-6xl lg:text-7xl neon-text opacity-0"
+
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.06 }}
+            className="mb-6 text-balance text-4xl font-black leading-[1.02] tracking-[-0.055em] text-white sm:text-5xl md:text-6xl xl:text-7xl"
           >
-            PALMYRA <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-light">DIGITAL STUDIO</span>
-          </h1>
-          
+            Tu negocio merece
+            <span className="hero-gradient block pb-1">una presencia digital</span>
+            que deje huella.
+          </motion.h1>
+
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mb-10 max-w-2xl text-base text-gray-400 md:text-lg"
+            transition={{ duration: 0.5, delay: 0.12 }}
+            className="mx-auto mb-8 max-w-xl text-pretty text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 lg:mx-0"
           >
-            Creamos páginas web profesionales que explican tu oferta, generan confianza y convierten visitas en oportunidades de negocio. Diseño moderno, rápido y adaptado a móviles.
+            Diseñamos páginas web, tiendas online y software a medida para que tu marca se vea profesional, conecte con sus clientes y convierta ideas en oportunidades reales.
           </motion.p>
-          
+
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row flex-wrap justify-center gap-4"
+            transition={{ duration: 0.5, delay: 0.18 }}
+            className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap lg:justify-start"
           >
-            <a
-              href="#calculadora"
-              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-brand px-8 py-4 font-bold text-white transition-all hover:scale-105 neon-glow"
-            >
-              <span className="relative z-10">Solicitar Presupuesto</span>
-              <ArrowRight size={20} className="relative z-10 transition-transform group-hover:translate-x-1" />
-              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-light to-brand opacity-0 transition-opacity group-hover:opacity-100" />
+            <a href="#contacto" className="group inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-brand px-6 py-4 text-base font-bold text-white shadow-xl shadow-brand/25 transition duration-200 hover:-translate-y-0.5 hover:bg-brand-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:ring-offset-2 focus-visible:ring-offset-[#050b14]">
+              Hablemos de tu proyecto
+              <ArrowRight size={19} className="transition-transform group-hover:translate-x-1" />
             </a>
-            
-            <a
-              href="#servicios"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 glass px-8 py-4 font-bold text-white transition-all hover:bg-white/10"
-            >
-              Ver Servicios
-            </a>
-            <a
-              href={CRM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-brand/50 bg-brand/10 px-8 py-4 font-bold text-brand-light transition-all hover:bg-brand/20"
-            >
-              Conocer PALMYRA CRM <ExternalLink size={18} />
+            <a href="#servicios" className="inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/[0.04] px-6 py-4 text-base font-semibold text-white transition hover:border-white/30 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light">
+              Explorar soluciones
             </a>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-xs font-medium text-slate-400 sm:text-sm lg:justify-start"
+          >
+            {capabilities.map(({ icon: Icon, label }) => (
+              <span key={label} className="inline-flex items-center gap-2">
+                <CheckCircle2 size={15} className="shrink-0 text-emerald-300" />
+                {label}
+              </span>
+            ))}
+          </motion.div>
+
+          <div className="mt-8 border-t border-white/10 pt-5 text-sm text-slate-400">
+            ¿Buscas organizar también tu operación?
+            <a href={CRM_URL} target="_blank" rel="noopener noreferrer" className="ml-2 inline-flex items-center gap-1 font-semibold text-violet-200 underline decoration-brand/50 underline-offset-4 transition hover:text-white">
+              Descubre PALMYRA CRM <ArrowRight size={14} />
+            </a>
+          </div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 22, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.65, delay: 0.12 }}
+          className="relative mx-auto w-full max-w-xl lg:max-w-none"
+          aria-label="Vista conceptual de una experiencia digital y panel de negocio"
+        >
+          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-brand/20 via-transparent to-sky-400/10 blur-2xl" aria-hidden="true" />
+          <div className="hero-window relative overflow-hidden rounded-[1.5rem] border border-white/15 bg-[#0a1020]/90 p-3 shadow-2xl shadow-black/40 backdrop-blur-xl sm:rounded-[2rem] sm:p-4">
+            <div className="flex items-center justify-between gap-3 border-b border-white/10 px-2 pb-4 sm:px-3">
+              <div className="flex min-w-0 items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-rose-400/90" />
+                <span className="h-2.5 w-2.5 rounded-full bg-amber-300/90" />
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/90" />
+                <span className="ml-2 truncate text-xs font-medium text-slate-400">Tu próximo proyecto digital</span>
+              </div>
+              <span className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-2.5 py-1 text-[10px] font-semibold text-emerald-200 sm:text-xs">Vista conceptual</span>
+            </div>
+
+            <div className="grid gap-3 p-1 pt-4 sm:grid-cols-[.82fr_1.18fr] sm:gap-4 sm:p-3 sm:pt-5">
+              <div className="flex flex-col gap-3">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 sm:p-5">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand/20 text-violet-200">
+                    <Code2 size={21} />
+                  </div>
+                  <p className="text-xs font-medium text-slate-400">Una marca. Una experiencia.</p>
+                  <h2 className="mt-2 text-xl font-extrabold leading-tight text-white sm:text-2xl">Diseñada para destacar.</h2>
+                  <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/10">
+                    <div className="h-full w-4/5 rounded-full bg-gradient-to-r from-brand to-sky-300" />
+                  </div>
+                  <p className="mt-2 text-[11px] text-slate-500">Diseño · Desarrollo · Evolución</p>
+                </div>
+                <div className="rounded-2xl border border-brand/20 bg-gradient-to-br from-brand/15 to-sky-400/[0.06] p-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-xs font-semibold text-slate-300">Pensado para crecer</span>
+                    <TrendingUp size={17} className="text-emerald-300" />
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-slate-400">Una estructura clara que guía al visitante hacia el siguiente paso.</p>
+                </div>
+              </div>
+
+              <div className="flex min-w-0 flex-col gap-3">
+                <div className="rounded-2xl border border-white/10 bg-[#0d1527] p-4 sm:p-5">
+                  <div className="mb-5 flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-xs text-slate-400">Panel de ejemplo</p>
+                      <h3 className="mt-1 text-base font-bold text-white sm:text-lg">Tu negocio, más claro</h3>
+                    </div>
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky-300/10 text-sky-200">
+                      <BarChart3 size={18} />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="rounded-xl border border-white/5 bg-white/[0.035] p-3">
+                      <p className="text-[10px] text-slate-400 sm:text-xs">Experiencia</p>
+                      <p className="mt-1 text-sm font-bold text-white sm:text-base">Intuitiva</p>
+                      <div className="mt-2 h-1 rounded-full bg-white/10"><div className="h-full w-4/5 rounded-full bg-violet-300" /></div>
+                    </div>
+                    <div className="rounded-xl border border-white/5 bg-white/[0.035] p-3">
+                      <p className="text-[10px] text-slate-400 sm:text-xs">Adaptación</p>
+                      <p className="mt-1 text-sm font-bold text-white sm:text-base">Multidispositivo</p>
+                      <div className="mt-2 h-1 rounded-full bg-white/10"><div className="h-full w-full rounded-full bg-sky-300" /></div>
+                    </div>
+                  </div>
+                  <div className="mt-3 flex h-24 items-end gap-2 rounded-xl border border-white/5 bg-white/[0.025] p-3 sm:h-28">
+                    {[36, 52, 43, 68, 56, 82, 72, 94, 76, 100, 86, 110].map((height, index) => (
+                      <div key={index} className="flex h-full flex-1 items-end">
+                        <div className="w-full rounded-t-sm bg-gradient-to-t from-brand/70 to-sky-300/90" style={{ height: `${height / 1.1}%`, opacity: 0.45 + index * 0.045 }} />
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-3 flex items-center gap-2 text-xs text-slate-400">
+                    <CheckCircle2 size={15} className="text-emerald-300" />
+                    Estructura clara. Próximos pasos visibles.
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-3 sm:p-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-300/10 text-amber-200">
+                    <Sparkles size={19} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-bold text-white">Hecho para tu negocio</p>
+                    <p className="text-xs leading-5 text-slate-400">Sin una plantilla que te obligue a encajar.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="relative mx-auto mt-4 flex w-fit items-center gap-2 rounded-full border border-white/10 bg-[#0a1020]/90 px-4 py-2 text-xs text-slate-300 shadow-lg sm:text-sm">
+            <span className="h-2 w-2 rounded-full bg-emerald-300" />
+            Diseño con intención. Tecnología con propósito.
+          </div>
+        </motion.div>
       </div>
     </section>
   );
