@@ -59,7 +59,7 @@ export default function Navbar() {
             onClick={(e) => handleLinkClick(e, '#hero')}
             className="flex items-center gap-2 text-xl font-bold tracking-tighter text-white"
           >
-            <span className="text-brand">NEXUS</span>
+            <span className="text-brand">PALMYRA</span>
             <span className="hidden sm:inline">DIGITAL STUDIO</span>
           </a>
 
