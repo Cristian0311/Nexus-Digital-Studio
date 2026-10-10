@@ -32,8 +32,8 @@ export default function App() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Nexus Digital Studio | Desarrollo Web Premium</title>
-        <meta name="description" content="Transformamos ideas en soluciones digitales de alto impacto. Especialistas en React, 3D y experiencias web premium." />
+        <title>PALMYRA DIGITAL STUDIO | Diseño y Desarrollo Web</title>
+        <meta name="description" content="Creamos páginas web profesionales, tiendas online y sistemas digitales para ayudar a los negocios a captar clientes, vender y crecer." />
       </Helmet>
       
       <Router>
