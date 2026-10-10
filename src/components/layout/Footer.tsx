@@ -1,5 +1,5 @@
 import { Phone, MessageCircle, Clock } from 'lucide-react';
-import { WHATSAPP_NUMBER, WHATSAPP_URL } from '../../data';
+import { CRM_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from '../../data';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,8 +14,11 @@ export default function Footer() {
               <span className="text-brand">PALMYRA</span> DIGITAL STUDIO
             </h3>
             <p className="text-gray-400">
-              Creamos páginas web, tiendas online y soluciones digitales para presentar tu negocio y facilitar que los clientes te contacten.
+              Diseñamos experiencias web y herramientas digitales para que tu negocio se presente mejor, trabaje con más claridad y crezca.
             </p>
+            <a href={CRM_URL} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex w-fit items-center gap-2 rounded-full border border-brand/40 px-4 py-2 text-sm font-semibold text-brand-light transition-colors hover:bg-brand/15">
+              Descubre PALMYRA CRM ↗
+            </a>
             <a href={`${WHATSAPP_URL}?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20web.`} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-brand/15 px-4 py-2 text-sm font-semibold text-brand-light transition-colors hover:bg-brand hover:text-white">
               <MessageCircle size={16} /> Escríbenos por WhatsApp
             </a>
@@ -28,6 +31,7 @@ export default function Footer() {
               <a href="#portafolio" className="text-gray-400 hover:text-brand transition-colors">Portafolio</a>
               <a href="#proceso" className="text-gray-400 hover:text-brand transition-colors">Nuestro Proceso</a>
               <a href="#precios" className="text-gray-400 hover:text-brand transition-colors">Planes y Precios</a>
+              <a href={CRM_URL} target="_blank" rel="noopener noreferrer" className="text-brand-light hover:text-white transition-colors">PALMYRA CRM ↗</a>
             </nav>
           </div>
 
