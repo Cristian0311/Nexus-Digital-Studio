@@ -22,7 +22,7 @@ export default function Pricing() {
             transition={{ delay: 0.1 }}
             className="mx-auto max-w-2xl text-lg text-gray-400"
           >
-            Precios de referencia. Cada proyecto es único y se cotiza según requerimientos específicos.
+            Precios orientativos en USD. El alcance final se confirma por escrito antes de comenzar; dominio, alojamiento, servicios de terceros y mantenimiento recurrente pueden cotizarse por separado.
           </motion.p>
         </div>
 
