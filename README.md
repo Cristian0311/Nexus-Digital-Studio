@@ -2,9 +2,13 @@
 <img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 </div>
 
-# Run and deploy your AI Studio app
+# PALMYRA DIGITAL STUDIO
 
-This contains everything you need to run your app locally.
+Sitio web comercial para servicios de diseño y desarrollo web.
+
+## Desarrollo local
+
+Este repositorio contiene el código fuente del sitio web de PALMYRA DIGITAL STUDIO.
 
 View your app in AI Studio: https://ai.studio/apps/fc44aae0-0c51-497a-b419-99432680bf2c
 
