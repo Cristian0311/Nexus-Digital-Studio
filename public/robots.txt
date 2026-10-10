@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nexus-digital-studio.onrender.com/sitemap.xml
