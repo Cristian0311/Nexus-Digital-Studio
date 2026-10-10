@@ -1,4 +1,5 @@
 import Hero from '../components/sections/Hero';
+import CRMShowcase from '../components/sections/CRMShowcase';
 import Services from '../components/sections/Services';
 import TechStack from '../components/sections/TechStack';
 import Portfolio from '../components/sections/Portfolio';
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <main className="flex flex-col w-full">
       <Hero />
+      <CRMShowcase />
       <TechStack />
       <Services />
       <Portfolio />
