@@ -50,7 +50,7 @@ export default function NetworkBackground() {
         if (!ctx) return;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(8, 109, 102, 0.8)';
+        ctx.fillStyle = 'rgba(139, 124, 255, 0.78)';
         ctx.fill();
       }
     }
@@ -76,7 +76,7 @@ export default function NetworkBackground() {
 
           if (distance < connectionDistance) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(8, 109, 102, ${1 - distance / connectionDistance})`;
+            ctx.strokeStyle = `rgba(139, 124, 255, ${0.55 * (1 - distance / connectionDistance)})`;
             ctx.lineWidth = 1;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
