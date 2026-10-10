@@ -23,7 +23,7 @@ export default function Privacy() {
 
           <section>
             <h2 className="text-xl font-bold text-white mb-3">3. Compartir información</h2>
-            <p>Nexus Digital Studio NO vende, alquila ni comparte su información personal con terceros para fines comerciales o de marketing. Solo compartiremos información cuando sea estrictamente necesario para la ejecución técnica de su proyecto (ej. registro de dominios) y con su autorización previa.</p>
+            <p>PALMYRA DIGITAL STUDIO NO vende, alquila ni comparte su información personal con terceros para fines comerciales o de marketing. Solo compartiremos información cuando sea estrictamente necesario para la ejecución técnica de su proyecto (ej. registro de dominios) y con su autorización previa.</p>
           </section>
 
           <section>
