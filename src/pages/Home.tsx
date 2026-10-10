@@ -15,9 +15,9 @@ export default function Home() {
   return (
     <main className="flex w-full flex-col">
       <Hero />
+      <CRMShowcase />
       <Stats />
       <Services />
-      <CRMShowcase />
       <Portfolio />
       <WhyChooseUs />
       <Process />
