@@ -9,7 +9,7 @@ const featuredItems = [
     id: "featured-1",
     title: "Página Web para Negocios",
     subtitle: "Lo más pedido",
-    description: "Atrae nuevos clientes y promociona tus servicios 24/7 con una landing page optimizada y profesional. Perfecta para consultores, clínicas, y negocios locales.",
+    description: "Presenta tus servicios en una página profesional disponible para que tus clientes la consulten cuando la necesiten. Perfecta para consultores, clínicas, y negocios locales.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3",
     tags: ["Captación de Leads", "Diseño Responsive", "Botón WhatsApp"],
     price: "60 - 300",
@@ -37,7 +37,7 @@ const featuredItems = [
     id: "featured-3",
     title: "Calculadora Solar Inteligente",
     subtitle: "Innovación y Sostenibilidad",
-    description: "App que analiza el consumo eléctrico del hogar y calcula exactamente cuántos paneles solares (Wh), inversores y baterías necesitas.",
+    description: "Herramienta web para estimar necesidades solares a partir de datos de consumo y parámetros técnicos definidos.",
     image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=2000&ixlib=rb-4.0.3",
     tags: ["Eficiencia Energética", "Cálculo de Paneles", "Cotizador Automatizado"],
     price: "300 - 600",
@@ -63,7 +63,7 @@ export default function Featured() {
             className="inline-flex items-center gap-2 rounded-full bg-brand/10 px-4 py-2 text-sm font-semibold text-brand mb-4 border border-brand/20"
           >
             <Star size={16} fill="currentColor" />
-            <span>Los Favoritos de Nuestros Clientes</span>
+            <span>Soluciones recomendadas</span>
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export default function Featured() {
             transition={{ delay: 0.1 }}
             className="mx-auto max-w-2xl text-lg text-gray-400"
           >
-            Descubre las soluciones tecnológicas más elegidas por emprendedores y empresas para escalar al siguiente nivel.
+            Explora soluciones habituales para presentar tu negocio, organizar tus ventas y automatizar tareas.
           </motion.p>
         </div>
 
