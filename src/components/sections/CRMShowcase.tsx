@@ -5,7 +5,7 @@ import { CRM_URL } from '../../data';
 const highlights = [
   { icon: Users, title: 'Clientes y seguimiento', description: 'Mantén la información comercial organizada y más fácil de consultar.' },
   { icon: Package, title: 'Ventas e inventario', description: 'Conecta las operaciones diarias con una visión más clara del negocio.' },
-  { icon: ChartNoAxesCombined, title: 'Reportes para decidir', description: 'Consulta información de gestión y detecta dónde enfocar tus esfuerzos.' },
+  { icon: BarChart3, title: 'Reportes para decidir', description: 'Consulta información de gestión y detecta dónde enfocar tus esfuerzos.' },
   { icon: ClipboardList, title: 'Operaciones centralizadas', description: 'Reduce la dispersión de tareas con herramientas de gestión en un mismo lugar.' },
 ];
 
