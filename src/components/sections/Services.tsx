@@ -19,6 +19,8 @@ const ServiceCard = ({ service, index, onOpenDetails }: { service: typeof servic
       
       <div className="relative h-48 w-full overflow-hidden">
         <img 
+          loading="lazy"
+          decoding="async"
           src={service.image} 
           alt={service.name} 
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" 
@@ -142,6 +144,8 @@ export default function Services() {
 
                 <div className="relative h-48 w-full shrink-0 md:h-auto md:w-2/5">
                   <img 
+                    loading="lazy"
+                    decoding="async"
                     src={selectedService.image} 
                     alt={selectedService.name} 
                     className="h-full w-full object-cover"
