@@ -79,13 +79,22 @@ export default function Navbar() {
             </div>
           </div>
 
+          <a
+            href="https://palmyracrm.onrender.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center rounded-full bg-brand px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-brand-light"
+          >
+            PALMYRA CRM ↗
+          </a>
+
           {/* Mobile Menu Toggle */}
           <button
             type="button"
             aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={mobileMenuOpen}
             className="text-white lg:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -112,6 +121,15 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
+              <a
+                href="https://palmyracrm.onrender.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-full bg-brand px-6 py-3 text-lg font-bold text-white"
+              >
+                Conocer PALMYRA CRM ↗
+              </a>
             </div>
           </motion.div>
         )}
