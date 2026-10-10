@@ -57,6 +57,31 @@ export const services: Service[] = [
     ]
   },
   {
+    id: "pos-software",
+    name: "Software de Punto de Venta (POS)",
+    description: "Sistema de caja y ventas para negocios que necesitan registrar operaciones, controlar productos y consultar reportes con una experiencia clara.",
+    price: "Consultar según alcance",
+    time: "Según necesidades",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=2000",
+    features: [
+      "Registro de ventas desde caja",
+      "Gestión de productos y precios",
+      "Control de inventario según configuración",
+      "Historial y consulta de operaciones",
+      "Reportes disponibles según alcance del proyecto"
+    ],
+    idealFor: [
+      "Tiendas y comercios minoristas",
+      "Negocios con inventario de productos",
+      "Empresas que desean digitalizar su punto de venta"
+    ],
+    benefits: [
+      "Flujo de venta más ordenado",
+      "Información operativa más fácil de consultar",
+      "Posibilidad de adaptar el sistema al negocio"
+    ]
+  },
+  {
     id: "catalog",
     name: "Catálogos con pedidos por WhatsApp",
     description: "Catálogos digitales interactivos enlazados directamente a tu WhatsApp.",
