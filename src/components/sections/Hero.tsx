@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { WHATSAPP_URL } from '../../data';
-import { ArrowRight, Code2 } from 'lucide-react';
+import { CRM_URL } from '../../data';
+import { ArrowRight, Code2, ExternalLink } from 'lucide-react';
 import gsap from 'gsap';
 
 export default function Hero() {
@@ -53,7 +53,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row flex-wrap justify-center gap-4"
           >
             <a
               href="#calculadora"
@@ -69,6 +69,14 @@ export default function Hero() {
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 glass px-8 py-4 font-bold text-white transition-all hover:bg-white/10"
             >
               Ver Servicios
+            </a>
+            <a
+              href={CRM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-brand/50 bg-brand/10 px-8 py-4 font-bold text-brand-light transition-all hover:bg-brand/20"
+            >
+              Conocer PALMYRA CRM <ExternalLink size={18} />
             </a>
           </motion.div>
         </div>
