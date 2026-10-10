@@ -1,5 +1,6 @@
 import { Service, PortfolioItem, FAQItem, PricingPlan, ProcessStep } from "./types";
 
+export const CRM_URL = "https://palmyracrm.onrender.com";
 export const WHATSAPP_NUMBER = "5355581669";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
@@ -59,7 +60,7 @@ export const services: Service[] = [
     id: "catalog",
     name: "Catálogos con pedidos por WhatsApp",
     description: "Catálogos digitales interactivos enlazados directamente a tu WhatsApp.",
-    price: "200 - 400",
+    price: "150 - 500",
     time: "1 semana",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=2000&ixlib=rb-4.0.3",
     features: [
@@ -222,11 +223,11 @@ export const portfolio: PortfolioItem[] = [
   {
     id: "p4",
     title: "Calculadora Solar Inteligente",
-    category: "Aplicación Web / IA",
-    description: "App especializada que analiza el consumo eléctrico del hogar y calcula exactamente cuántos paneles solares, inversores y baterías necesitas.",
+    category: "Aplicación Web",
+    description: "Ejemplo conceptual de una herramienta que estima necesidades solares a partir del consumo y de parámetros técnicos definidos.",
     features: ["Cálculo preciso de Wh", "Recomendación de equipos", "Generación de PDF", "Base de datos de paneles"],
     idealFor: ["Instaladores solares", "Empresas de energía", "Consultores energéticos"],
-    benefits: ["Agiliza las ventas", "Presupuestos en segundos", "Imagen altamente profesional"],
+    benefits: ["Agiliza la preparación de propuestas", "Ayuda a comparar escenarios", "Presentación clara de estimaciones"],
     price: "300 - 600",
     time: "2-3 semanas",
     image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=2000&ixlib=rb-4.0.3"
