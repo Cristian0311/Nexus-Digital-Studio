@@ -32,8 +32,8 @@ export default function App() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>PALMYRA DIGITAL STUDIO | Diseño y Desarrollo Web</title>
-        <meta name="description" content="Creamos páginas web profesionales, tiendas online y sistemas digitales para ayudar a los negocios a captar clientes, vender y crecer." />
+        <title>PALMYRA DIGITAL STUDIO | Web, Tiendas Online, POS y PALMYRA CRM</title>
+        <meta name="description" content="Creamos landing pages, tiendas online y software de punto de venta. Descubre PALMYRA CRM, nuestra plataforma para organizar clientes, ventas, productos y operaciones." />
       </Helmet>
       
       <Router>
