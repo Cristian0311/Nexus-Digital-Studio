@@ -1,61 +1,28 @@
-import { motion, useInView } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
-const stats = [
-  { value: 30, label: 'Proyectos Entregados', suffix: '+' },
-  { value: 98, label: 'Confiabilidad', suffix: '%' },
-  { value: 24, label: 'Soporte', suffix: '/7' },
-  { value: 5, label: 'Años de Experiencia', suffix: '+' },
+const valueProps = [
+  { title: 'Diseño adaptado', description: 'Una experiencia clara y cómoda en móviles, tablets y computadoras.' },
+  { title: 'Presupuesto transparente', description: 'Alcance, entregables y tiempos definidos antes de comenzar.' },
+  { title: 'Contacto directo', description: 'Habla con nosotros para explicar tu idea y resolver dudas.' },
+  { title: 'Enfoque en objetivos', description: 'Cada sección se diseña para presentar tu oferta y facilitar el contacto.' },
 ];
-
-const Counter = ({ value, suffix }: { value: number, suffix: string }) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (isInView) {
-      let start = 0;
-      const end = value;
-      const duration = 2000;
-      const increment = end / (duration / 16);
-      
-      const timer = setInterval(() => {
-        start += increment;
-        if (start > end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.ceil(start));
-        }
-      }, 16);
-      return () => clearInterval(timer);
-    }
-  }, [isInView, value]);
-
-  return (
-    <div ref={ref} className="text-4xl md:text-5xl font-black text-brand neon-text flex items-center justify-center">
-      {count}{suffix}
-    </div>
-  );
-};
 
 export default function Stats() {
   return (
-    <section className="relative py-16 z-10">
+    <section className="relative py-16 z-10" aria-label="Ventajas de PALMYRA DIGITAL STUDIO">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 rounded-3xl glass-card border-brand/20 p-8">
-          {stats.map((stat, i) => (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 rounded-3xl glass-card border-brand/20 p-8">
+          {valueProps.map((item, index) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              key={item.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="flex flex-col items-center text-center space-y-2"
+              transition={{ delay: index * 0.08 }}
+              className="flex flex-col items-center text-center gap-3 rounded-2xl p-3"
             >
-              <Counter value={stat.value} suffix={stat.suffix} />
-              <p className="text-sm font-medium text-gray-400 uppercase tracking-wider">{stat.label}</p>
+              <h3 className="text-lg font-bold text-brand">{item.title}</h3>
+              <p className="text-sm leading-relaxed text-gray-400">{item.description}</p>
             </motion.div>
           ))}
         </div>
