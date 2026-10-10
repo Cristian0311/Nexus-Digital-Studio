@@ -1,5 +1,4 @@
 import { Phone, MessageCircle, Clock } from 'lucide-react';
-import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { WHATSAPP_NUMBER, WHATSAPP_URL } from '../../data';
 
 export default function Footer() {
@@ -15,19 +14,11 @@ export default function Footer() {
               <span className="text-brand">PALMYRA</span> DIGITAL STUDIO
             </h3>
             <p className="text-gray-400">
-              Transformamos ideas en soluciones digitales de alto impacto. Creamos experiencias premium para marcas que buscan destacar.
+              Creamos páginas web, tiendas online y soluciones digitales para presentar tu negocio y facilitar que los clientes te contacten.
             </p>
-            <div className="mt-4 flex gap-4">
-              <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-gray-400 transition-colors hover:bg-brand hover:text-white">
-                <FaInstagram size={20} />
-              </a>
-              <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-gray-400 transition-colors hover:bg-brand hover:text-white">
-                <FaLinkedin size={20} />
-              </a>
-              <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-gray-400 transition-colors hover:bg-brand hover:text-white">
-                <FaTwitter size={20} />
-              </a>
-            </div>
+            <a href={`${WHATSAPP_URL}?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20web.`} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-brand/15 px-4 py-2 text-sm font-semibold text-brand-light transition-colors hover:bg-brand hover:text-white">
+              <MessageCircle size={16} /> Escríbenos por WhatsApp
+            </a>
           </div>
 
           <div className="flex flex-col gap-4">
