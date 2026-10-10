@@ -17,8 +17,8 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `*Nueva Solicitud de Proyecto*%0A%0A*Nombre:* ${formData.name}%0A*Empresa:* ${formData.company || 'N/A'}%0A*Tipo de Proyecto:* ${formData.project}%0A*Descripción:* ${formData.description}`;
-    window.open(`${WHATSAPP_URL}?text=${text}`, '_blank');
+    const text = `Nueva solicitud de proyecto\n\nNombre: ${formData.name}\nEmpresa: ${formData.company || 'No indicada'}\nTipo de proyecto: ${formData.project}\nDescripción: ${formData.description}`;
+    window.open(`${WHATSAPP_URL}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
