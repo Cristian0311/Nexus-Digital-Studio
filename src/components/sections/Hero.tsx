@@ -37,7 +37,7 @@ export default function Hero() {
             ref={titleRef}
             className="mb-6 text-4xl font-black tracking-tighter text-white md:text-6xl lg:text-7xl neon-text opacity-0"
           >
-            NEXUS <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-light">DIGITAL STUDIO</span>
+            PALMYRA <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-light">DIGITAL STUDIO</span>
           </h1>
           
           <motion.p
@@ -46,8 +46,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mb-10 max-w-2xl text-base text-gray-400 md:text-lg"
           >
-            Transformamos ideas en soluciones digitales de alto impacto. 
-            Diseño exclusivo, rendimiento extremo y resultados reales.
+            Creamos páginas web profesionales que explican tu oferta, generan confianza y convierten visitas en oportunidades de negocio. Diseño moderno, rápido y adaptado a móviles.
           </motion.p>
           
           <motion.div
