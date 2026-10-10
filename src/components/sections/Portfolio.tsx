@@ -33,7 +33,7 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="mb-4 text-4xl font-black text-white md:text-5xl neon-text"
           >
-            Casos de <span className="text-brand">Éxito</span>
+            Ejemplos de <span className="text-brand">Proyectos</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ export default function Portfolio() {
             transition={{ delay: 0.1 }}
             className="mx-auto max-w-2xl text-lg text-gray-400"
           >
-            Explora algunos de nuestros proyectos más recientes y descubre cómo podemos ayudarte.
+            Estas fichas muestran tipos de soluciones que podemos desarrollar. Solicita ejemplos verificables y una propuesta adaptada a tu negocio.
           </motion.p>
         </div>
 
