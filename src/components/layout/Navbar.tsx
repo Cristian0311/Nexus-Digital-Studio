@@ -64,7 +64,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden xl:flex items-center gap-5 2xl:gap-8">
             <div className="flex gap-6">
               {links.slice(1).map((link) => (
                 <a
@@ -93,7 +93,7 @@ export default function Navbar() {
             type="button"
             aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={mobileMenuOpen}
-            className="text-white lg:hidden"
+            className="rounded-xl p-2 text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light xl:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -108,15 +108,15 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-30 flex flex-col items-center justify-center bg-[#02040a]/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-30 flex flex-col items-center justify-start overflow-y-auto bg-[#02040a]/95 px-6 py-24 backdrop-blur-xl xl:hidden"
           >
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex w-full max-w-sm flex-col items-center gap-4">
               {links.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className="text-2xl font-semibold text-gray-300 transition-colors hover:text-brand"
+                  className="w-full rounded-xl py-1 text-center text-xl font-semibold text-gray-300 transition-colors hover:bg-white/5 hover:text-brand"
                 >
                   {link.name}
                 </a>
@@ -126,7 +126,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-full bg-brand px-6 py-3 text-lg font-bold text-white"
+                className="mt-2 w-full rounded-xl bg-brand px-6 py-4 text-center text-base font-bold text-white"
               >
                 Conocer PALMYRA CRM ↗
               </a>
