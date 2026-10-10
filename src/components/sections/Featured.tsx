@@ -96,6 +96,8 @@ export default function Featured() {
             >
               <div className="relative h-64 w-full overflow-hidden sm:h-72">
                 <img 
+                  loading="lazy"
+                  decoding="async"
                   src={item.image} 
                   alt={item.title} 
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -168,6 +170,8 @@ export default function Featured() {
 
               <div className="relative h-48 w-full shrink-0 md:h-auto md:w-2/5">
                 <img 
+                  loading="lazy"
+                  decoding="async"
                   src={selectedItem.image} 
                   alt={selectedItem.title} 
                   className="h-full w-full object-cover"
